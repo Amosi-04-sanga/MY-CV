@@ -1,0 +1,407 @@
+// variables.
+$body-bgcolor: rgb(219, 208, 192);
+$primary-color: black;
+$center: 45px auto;
+$padding: 23px;
+
+// css reset.
+// margin and padding.
+
+html, body, * {
+    margin: 0;
+    padding: 0;
+}
+
+// box sizing border box.
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(219, 208, 192);
+}
+
+// top.
+.top {
+    background-color: green;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+    padding: 20px 0 15px;
+}
+
+// checkbox.
+#check {
+    display: none;
+}
+label {
+    z-index: 1111;
+    position: fixed;
+    left: 40px;
+    top: 20px;
+    text-transform: uppercase;
+    color: wheat;
+}
+#close {
+    opacity: 0;
+}
+#check:checked ~ .sidebar {
+    left: 0;
+}
+#check:checked ~ #close {
+    opacity: 1;
+}
+#check:checked ~ #open {
+    opacity: 0;
+}
+#close, #open {
+    letter-spacing: 6px;
+    user-select: none;
+}
+
+// navigation.
+.sidebar {
+    padding: 10px 0 20px 32px;
+    background-color: teal;
+    height: 100vh;
+    width: 50%;
+    position: fixed;
+    z-index: 11;
+    left: -650px;
+    top: 0;
+    transition: all .4s ease-in-out;
+}
+.nav__head {
+    margin: 60px auto 30px;
+}
+.nav__my-nav {
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+
+.nav__body {
+    padding: 40px;
+    margin: 0;
+}
+.nav__item {
+    display: list-item;
+    list-style-type: none;
+    margin: 10px 0 37px 0;
+}
+.nav__link {
+    text-decoration: none;
+    color: blue;
+    transition: all .4s ease-in;
+    font-weight: 700;
+}
+.nav__link:hover {
+    padding-left: 3px;
+    color: rgb(53, 53, 212);
+}
+
+// main.
+main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.left, .work, .education{
+    background-color: white;
+    margin: 15px;
+    box-shadow: 1px 1px 8px 1px gray;
+}
+
+.my {
+    position: relative;
+}
+.my__photo {
+    width: 100%;
+    height: 36vh;
+}
+.my__name {
+    position: absolute;
+    bottom: 22px;
+    left: 20px;
+}
+.jane--doe {
+    text-transform: capitalize;
+}
+
+.contacts {
+    padding: $padding;
+}
+.contact__margin {
+    margin: 6px 0 7px;
+}
+.contacts__designer, .contacts__london, .contacts__email, .contacts__call {
+    text-transform: capitalize;
+}
+
+hr {
+    opacity: .4;
+    margin: 10px 0 12px;
+}
+
+//skills.
+.bars {
+    margin: 20px 0;
+}
+.bars__header {
+    padding: 10px 22px 20px;
+}
+.bars__skills {
+    text-transform: uppercase;
+}
+
+.bars__adobe {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 12px;
+}
+.adobe--photoshop, .photography, .illustrator, .medias{
+    text-transform: capitalize;
+    padding: 10px $padding;
+}
+
+// bars.
+.bars__percent {
+    text-align: center;
+}
+.bars__green {
+    border-radius: 20px 0 0 20px;
+    background-color: rgb(37, 166, 175);
+}
+.bars__grey {
+    border-radius: 0 20px 20px 0;
+    background-color: grey;
+}
+.bars__green, .bars__grey {
+    height: 15px;
+}
+.bars__adobe, .bars__photog, .bars__illustrator, .bars__media{
+    padding: 0 6px 0;
+}
+
+.bars__progress {
+    display: grid;
+}
+.bars__90 {
+    grid-template-columns: 90% 10%;   
+}
+.bars__75 {
+    grid-template-columns: 75% 25%;
+}
+.bars__60 {
+    grid-template-columns: 60% 40%;
+}
+.bars__80 {
+    grid-template-columns: 80% 20%;
+}
+
+// languages
+.languages {
+    margin: 50px 0;
+}
+.languages__header {
+    margin: 22px 0;
+    padding: 0 $padding;
+} 
+.languages__heading3 {
+    text-transform: uppercase;
+}
+.languages__eng {
+    margin: 12px 0;
+}
+.english, .spanish, .German{
+    text-transform: capitalize;
+    padding: 0 $padding;
+}
+.languages__skill {
+    display: grid;
+    padding: 4px 10px;
+}
+.languages__80 {
+    grid-template-columns: 80% 20%;
+}
+.languages__60 {
+    grid-template-columns: 60% 40%;
+}
+.languages__90 {
+    grid-template-columns: 90% 10%;
+}
+.languages__green {
+    border-radius: 20px 0 0 20px;
+    background-color: green;
+}
+.languages__grey {
+    background-color: grey;
+    border-radius: 0 20px 20px 0;
+}
+.languages__green, .languages__grey {
+    height: 15px;
+}
+
+// work experience.
+.work {
+    padding: 1px $padding; // to prevent margin collapse.
+}
+.experience__header {
+    margin: 30px 0 15px;
+    padding: 1px $padding;
+}
+.work--experience {
+    text-transform: uppercase;
+}
+.work__parag {
+    padding: 10px 0 30px 0;
+}
+
+.work__header {
+    margin: 30px 0 0;
+}
+.front-end-developer, .web-developer, .graphic-designer{
+    text-transform: capitalize;
+}
+.jan--2015, .mar--2012, .jun-2010{
+    text-transform: capitalize;
+    opacity: .6;
+    font-family: cursive;
+    font-style: oblique;
+}
+.work__white {
+    background-color: green;
+    color: white;
+    padding: 0 5px 2px 4px;
+    border-radius: 10px;
+}
+.work__header {
+    margin: 12px 0;
+}
+.work__parag {
+    font-size: .9em;
+}
+
+// education.
+.education {
+    padding: 1px $padding;
+}
+
+.education__header {
+    margin: 20px 0 21px;
+}
+.education--heading2 {
+    text-transform: uppercase;
+}
+.education__site {
+    margin: 34px 0 2px;
+}
+.w3schools, .london, .coding-school {
+    font-size: 1em;
+}
+
+// footer.
+footer {
+    width: 100%;
+    height: 40vh;
+    padding: 17vh 0;
+    text-align: center;
+    background-color: grey;
+}
+.footer--link {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: medium;
+}
+
+// media queries.
+@media only screen and (max-width: 600px) {
+    main {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .sidebar {
+        width: 100%;
+    }   
+}
+
+// icons.
+//contacts icons.
+.icon::before {
+    color: green;
+    margin-right: 17px;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+}
+.contacts__designer::before {
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    content: '\f0f2';
+}
+.contacts__london::before {
+    content: '\f015';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.contacts__email::before {
+    content: '\f0e0';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.contacts__call::before {
+    content: '\f2a0';
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+}
+// skills icon.
+.bars__skills::before {
+    content: '\f013';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.languages__heading3::before {
+    content: '\f57e';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+//experience icon.
+.work--experience::before {
+    content: '\f0f2';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.date::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f073';
+}
+.education--heading2::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f5da';
+}
+
+// footer icons.
+.footer--icons {
+    display: inline-flex;
+    margin: 12px 0 15px;
+    justify-content: center;
+}
+.fab {
+    color: wheat;
+}
+.fab:hover {
+    background-color: green;
+}
+.facebook, .twetter, .pinterest, .whatsapp, .instagram {
+    margin-left: 10px;
+    background-color: rebeccapurple;
+    padding: 4px 7px;
+    border-radius: 50%;
+}
